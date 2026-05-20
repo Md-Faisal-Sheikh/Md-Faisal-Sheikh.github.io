@@ -13,7 +13,7 @@
     const g = c.getContext("2d");
     const accent = opts.accent || "#7BF6FF";
     const accent2 = opts.accent2 || "#FF4FD8";
-    const isResearch = work.kind === "research";
+    const isAltKind = work.kind !== "project";
 
     // background — dark glass
     const bg = g.createLinearGradient(0, 0, 0, H);
@@ -29,7 +29,7 @@
     for (let y = 0; y <= H; y += 64) { g.beginPath(); g.moveTo(0, y); g.lineTo(W, y); g.stroke(); }
 
     // accent edge — top-left corner brackets
-    const c1 = isResearch ? accent2 : accent;
+    const c1 = isAltKind ? accent2 : accent;
     g.strokeStyle = c1;
     g.lineWidth = 4;
     g.beginPath();
@@ -76,7 +76,7 @@
     // kind
     g.textAlign = "right";
     g.fillStyle = c1;
-    g.fillText(isResearch ? "RESEARCH PAPER" : "PROJECT", W - 64, H - 64);
+    g.fillText(isAltKind ? work.kind.toUpperCase() : "PROJECT", W - 64, H - 64);
     g.textAlign = "left";
 
     const tex = new THREE.CanvasTexture(c);
@@ -97,7 +97,7 @@
 
     // neon edge — ring outline using thin frame
     const frame = new THREE.Group();
-    const edgeColor = work.kind === "research"
+    const edgeColor = work.kind !== "project"
       ? new THREE.Color(opts.accent2)
       : new THREE.Color(opts.accent);
     const edgeMat = new THREE.MeshBasicMaterial({

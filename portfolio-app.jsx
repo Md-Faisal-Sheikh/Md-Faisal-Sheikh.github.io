@@ -10,35 +10,34 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 }/*EDITMODE-END*/;
 
 const PALETTES = [
-  ["#7BF6FF", "#FF4FD8"],   // cyan + magenta
-  ["#A8FF60", "#FF8A3D"],   // acid + amber
-  ["#9C8CFF", "#56F0C8"],   // violet + mint
-  ["#FFE066", "#FF4D6D"],   // sun + coral
+  ["#7BF6FF", "#FF4FD8"],
+  ["#A8FF60", "#FF8A3D"],
+  ["#9C8CFF", "#56F0C8"],
+  ["#FFE066", "#FF4D6D"],
 ];
 
 const SECTIONS = [
-  { key: "work",     label: "Work" },
-  { key: "research", label: "Research" },
-  { key: "about",    label: "About" },
-  { key: "skills",   label: "Skills" },
-  { key: "writing",  label: "Writing" },
-  { key: "resume",   label: "Resume" },
-  { key: "contact",  label: "Contact" },
+  { key: "work", label: "Work" },
+  { key: "learning", label: "Learning" },
+  { key: "about", label: "About" },
+  { key: "skills", label: "Skills" },
+  { key: "highlights", label: "Highlights" },
+  { key: "resume", label: "Experience" },
+  { key: "contact", label: "Contact" },
 ];
 
 function App() {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
   const [hoverId, setHoverId] = useState(null);
   const [focusId, setFocusId] = useState(null);
-  const [overlay, setOverlay] = useState(null); // section key or null
-  const [filter, setFilter] = useState("all");  // all | project | research
+  const [overlay, setOverlay] = useState(null);
+  const [filter, setFilter] = useState("all");
   const canvasRef = useRef(null);
   const sceneRef = useRef(null);
 
   const works = window.PORTFOLIO.works;
   const data = window.PORTFOLIO;
 
-  // boot scene once
   useEffect(() => {
     const s = new window.PortfolioScene(canvasRef.current, {
       accent: t.palette[0],
@@ -49,16 +48,14 @@ function App() {
     s.onHover = (id) => setHoverId(id);
     s.onSelect = (id) => setFocusId(id);
     sceneRef.current = s;
-    return () => { /* leave running */ };
+    return () => {};
     // eslint-disable-next-line
   }, []);
 
-  // sync tweaks → scene
   useEffect(() => { sceneRef.current?.setLayout(t.layout); }, [t.layout]);
   useEffect(() => { sceneRef.current?.setIntensity(t.intensity); }, [t.intensity]);
   useEffect(() => { sceneRef.current?.setFocus(focusId); }, [focusId]);
 
-  // filter applies via dimming the work title list, scene shows all
   const filtered = useMemo(() => {
     if (filter === "all") return works;
     return works.filter(w => w.kind === filter);
@@ -77,21 +74,19 @@ function App() {
       <div className="vignette"></div>
       <div className="scanlines"></div>
 
-      {/* top bar */}
       <header className="topbar">
         <div className="brand">
           <span className="brand-mark" aria-hidden></span>
           <span className="brand-name">{data.hero.name}</span>
-          <span className="brand-sep">·</span>
+          <span className="brand-sep">/</span>
           <span className="brand-role">{data.hero.role}</span>
         </div>
         <div className="meta">
           <span className="meta-dot"></span>
-          Available · 2026
+          {data.hero.availability || "Available"}
         </div>
       </header>
 
-      {/* left sidebar */}
       <nav className="sidebar">
         <div className="side-label">Index</div>
         <ul>
@@ -100,9 +95,9 @@ function App() {
               <button
                 className={"nav-btn" + (overlay === s.key ? " active" : "")}
                 onClick={() => {
-                  if (s.key === "work" || s.key === "research") {
+                  if (s.key === "work" || s.key === "learning") {
                     setOverlay(null);
-                    setFilter(s.key === "work" ? "project" : "research");
+                    setFilter(s.key === "work" ? "project" : "learning");
                     setFocusId(null);
                   } else {
                     setOverlay(o => o === s.key ? null : s.key);
@@ -129,22 +124,20 @@ function App() {
         </div>
       </nav>
 
-      {/* hero copy — bottom-left */}
       {!focusId && !overlay && (
         <div className="hero">
-          <div className="hero-eyebrow">— Selected works · {works.length}</div>
+          <div className="hero-eyebrow">Selected work / {works.length}</div>
           <h1 className="hero-title">
-            <span className="ital">Instruments</span> for thinking,<br/>
-            <span className="ital">interfaces</span> for reading.
+            <span className="ital">Frontend</span> portfolio<br/>
+            for web, UI, and deployment.
           </h1>
           <p className="hero-sub">{data.hero.tagline}</p>
           <div className="hero-cta">
-            <span className="cta-hint">Drag to explore · Click any tile</span>
+            <span className="cta-hint">Drag to explore / Click any tile</span>
           </div>
         </div>
       )}
 
-      {/* project list — right side */}
       {!focusId && !overlay && (
         <aside className="works">
           <div className="works-head">
@@ -154,7 +147,7 @@ function App() {
           <div className="works-filter">
             <button className={filter === "all" ? "on" : ""} onClick={() => setFilter("all")}>All</button>
             <button className={filter === "project" ? "on" : ""} onClick={() => setFilter("project")}>Projects</button>
-            <button className={filter === "research" ? "on" : ""} onClick={() => setFilter("research")}>Research</button>
+            <button className={filter === "learning" ? "on" : ""} onClick={() => setFilter("learning")}>Learning</button>
           </div>
           <ul className="works-list">
             {filtered.map((w) => (
@@ -163,7 +156,7 @@ function App() {
                 className={
                   "work-row" +
                   (hoverId === w.id ? " hovered" : "") +
-                  (w.kind === "research" ? " research" : "")
+                  (w.kind === "learning" ? " research" : "")
                 }
                 onMouseEnter={() => setHoverId(w.id)}
                 onMouseLeave={() => setHoverId(null)}
@@ -179,25 +172,23 @@ function App() {
         </aside>
       )}
 
-      {/* hover preview chip near cursor area, bottom center */}
       {hoveredWork && !focusId && !overlay && (
         <div className="hover-chip">
-          <span className="hc-dot" style={{ background: hoveredWork.kind === "research" ? accent2 : accent }}></span>
+          <span className="hc-dot" style={{ background: hoveredWork.kind === "learning" ? accent2 : accent }}></span>
           <span className="hc-code">{hoveredWork.code}</span>
           <span className="hc-title">{hoveredWork.title}</span>
         </div>
       )}
 
-      {/* project detail */}
       {focusedWork && (
         <div className="detail">
-          <button className="detail-close" onClick={() => setFocusId(null)}>← Back to catalogue</button>
+          <button className="detail-close" onClick={() => setFocusId(null)}>Back to catalogue</button>
           <div className="detail-grid">
             <div className="detail-meta">
-              <div className="dm-code" style={{ color: focusedWork.kind === "research" ? accent2 : accent }}>
+              <div className="dm-code" style={{ color: focusedWork.kind === "learning" ? accent2 : accent }}>
                 {focusedWork.code}
               </div>
-              <div className="dm-kind">{focusedWork.kind === "research" ? "Research paper" : "Project"}</div>
+              <div className="dm-kind">{focusedWork.kind === "learning" ? "Learning focus" : "Project"}</div>
               <div className="dm-year">{focusedWork.year}</div>
               <div className="dm-tag">{focusedWork.tag}</div>
             </div>
@@ -205,33 +196,39 @@ function App() {
               <h2 className="detail-title">{focusedWork.title}</h2>
               <p className="detail-blurb">{focusedWork.blurb}</p>
               <div className="detail-cs">
-                <div className="cs-label">Case study</div>
+                <div className="cs-label">Overview</div>
                 <div className="cs-rows">
-                  <div className="cs-row"><span>Role</span><span>Research, design, build</span></div>
-                  <div className="cs-row"><span>Duration</span><span>14 weeks · 2 sprints</span></div>
-                  <div className="cs-row"><span>Team</span><span>Solo — w/ external review</span></div>
-                  <div className="cs-row"><span>Status</span><span>{focusedWork.kind === "research" ? "Published" : "Shipped · Live"}</span></div>
+                  <div className="cs-row"><span>Role</span><span>{focusedWork.role || "Frontend build"}</span></div>
+                  <div className="cs-row"><span>Duration</span><span>{focusedWork.duration || "Ongoing"}</span></div>
+                  <div className="cs-row"><span>Team</span><span>{focusedWork.team || "Solo"}</span></div>
+                  <div className="cs-row"><span>Status</span><span>{focusedWork.status || "Active"}</span></div>
                 </div>
                 <div className="cs-stub">
-                  <div className="cs-stub-bar" style={{ background: focusedWork.kind === "research" ? accent2 : accent }}></div>
-                  <div className="cs-stub-text">Full case study · placeholder. Drop in process notes, screens, citations, repo links here.</div>
+                  <div className="cs-stub-bar" style={{ background: focusedWork.kind === "learning" ? accent2 : accent }}></div>
+                  <div className="cs-stub-text">This entry uses the public profile and project links currently available. More LinkedIn details can be added as soon as you share the profile sections you want included.</div>
                 </div>
               </div>
               <div className="detail-actions">
-                <button className="d-btn primary">{focusedWork.kind === "research" ? "Read paper (PDF)" : "Visit project"}</button>
-                <button className="d-btn">Source</button>
+                {focusedWork.primaryUrl && (
+                  <a className="d-btn primary" href={focusedWork.primaryUrl} target="_blank" rel="noreferrer">
+                    {focusedWork.primaryLabel || "Open"}
+                  </a>
+                )}
+                {focusedWork.secondaryUrl && (
+                  <a className="d-btn" href={focusedWork.secondaryUrl} target="_blank" rel="noreferrer">
+                    {focusedWork.secondaryLabel || "Source"}
+                  </a>
+                )}
               </div>
             </div>
           </div>
         </div>
       )}
 
-      {/* section overlays */}
       {overlay && (
         <SectionOverlay sectionKey={overlay} onClose={() => setOverlay(null)} accent={accent} accent2={accent2} />
       )}
 
-      {/* TWEAKS */}
       <TweaksPanel title="Tweaks">
         <TweakSection label="Spatial layout" />
         <TweakRadio label="Arrangement" value={t.layout}
@@ -270,7 +267,7 @@ function SectionOverlay({ sectionKey, onClose, accent, accent2 }) {
   } else if (sectionKey === "skills") {
     body = (
       <div className="sec sec-skills">
-        <h2 className="sec-h">Stack &amp; craft</h2>
+        <h2 className="sec-h">Stack</h2>
         <div className="skills-grid">
           {data.skills.map((g) => (
             <div key={g.group} className="skill-col">
@@ -281,12 +278,12 @@ function SectionOverlay({ sectionKey, onClose, accent, accent2 }) {
         </div>
       </div>
     );
-  } else if (sectionKey === "writing") {
+  } else if (sectionKey === "highlights") {
     body = (
       <div className="sec sec-writing">
-        <h2 className="sec-h">Writing</h2>
+        <h2 className="sec-h">Highlights</h2>
         <ul className="write-list">
-          {data.writing.map((w, i) => (
+          {data.highlights.map((w, i) => (
             <li key={i} className="write-row">
               <span className="w-date">{w.date}</span>
               <span className="w-title">{w.title}</span>
@@ -299,7 +296,7 @@ function SectionOverlay({ sectionKey, onClose, accent, accent2 }) {
   } else if (sectionKey === "resume") {
     body = (
       <div className="sec sec-resume">
-        <h2 className="sec-h">Trajectory</h2>
+        <h2 className="sec-h">Experience</h2>
         <ul className="res-list">
           {data.resume.map((r, i) => (
             <li key={i} className="res-row">
@@ -315,14 +312,14 @@ function SectionOverlay({ sectionKey, onClose, accent, accent2 }) {
     body = (
       <div className="sec sec-contact">
         <h2 className="sec-h">Get in touch</h2>
-        <a className="big-mail" href={`mailto:${data.contact.email}`} style={{ color: accent }}>
-          {data.contact.email}
+        <a className="big-mail" href={data.contact.primaryUrl} target="_blank" rel="noreferrer" style={{ color: accent }}>
+          {data.contact.primaryLabel}
         </a>
         <ul className="contact-list">
           {data.contact.socials.map((s) => (
             <li key={s.label}>
               <span className="cl-label">{s.label}</span>
-              <span className="cl-handle">{s.handle}</span>
+              <a className="cl-handle" href={s.url} target="_blank" rel="noreferrer">{s.handle}</a>
             </li>
           ))}
         </ul>
@@ -332,7 +329,7 @@ function SectionOverlay({ sectionKey, onClose, accent, accent2 }) {
 
   return (
     <div className="overlay">
-      <button className="overlay-close" onClick={onClose}>← Back</button>
+      <button className="overlay-close" onClick={onClose}>Back</button>
       <div className="overlay-inner">{body}</div>
     </div>
   );
