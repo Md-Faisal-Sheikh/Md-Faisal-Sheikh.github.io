@@ -1,4 +1,4 @@
-window.PORTFOLIO = {
+window.SITE_DATA = {
   profile: {
     name: "Md. Faisal Sheikh",
     shortName: "Faisal Sheikh",
@@ -9,14 +9,14 @@ window.PORTFOLIO = {
     status: "Open to opportunities",
     bio: [
       "I am a software and AI-focused developer with public work across computer vision, NLP, Java, PHP, C++, Python, Jupyter Notebook, and web deployment.",
-      "My GitHub shows hands-on projects in banking systems, marketplaces, digital logic, stress monitoring, machine learning experiments, and a professional portfolio deployed through GitHub Pages.",
+      "My GitHub shows hands-on projects in banking systems, marketplaces, digital logic, stress monitoring, machine learning experiments, and a professional website deployed through GitHub Pages.",
       "I like building useful systems, learning from real repositories, and turning technical ideas into clear, maintainable products."
     ],
     avatar: "https://avatars.githubusercontent.com/u/151189489?v=4",
     links: [
       { label: "GitHub", url: "https://github.com/Md-Faisal-Sheikh" },
       { label: "LinkedIn", url: "https://www.linkedin.com/in/md-faisal-sheikh-5a9b46265" },
-      { label: "Portfolio", url: "https://md-faisal-sheikh.github.io/" },
+      { label: "Website", url: "https://md-faisal-sheikh.github.io/" },
       { label: "Email", url: "mailto:151189489+Md-Faisal-Sheikh@users.noreply.github.com" }
     ]
   },
@@ -46,12 +46,12 @@ window.PORTFOLIO = {
     {
       title: "Maintains 21 public GitHub repositories",
       meta: "GitHub",
-      detail: "A public portfolio of coursework, AI experiments, systems projects, web apps, forks, and deployment work."
+      detail: "A public body of coursework, AI experiments, systems projects, web apps, forks, and deployment work."
     },
     {
-      title: "Published a personal portfolio on GitHub Pages",
+      title: "Published a personal website on GitHub Pages",
       meta: "Deployment",
-      detail: "Built and deployed a live portfolio at md-faisal-sheikh.github.io using a main GitHub Pages repository."
+      detail: "Built and deployed a live site at md-faisal-sheikh.github.io using a main GitHub Pages repository."
     },
     {
       title: "Built applied academic and engineering projects",
@@ -69,7 +69,7 @@ window.PORTFOLIO = {
       title: "LinkedIn certificates and credentials",
       issuer: "LinkedIn profile",
       date: "Available on request",
-      detail: "LinkedIn did not expose certificate details to this environment. This section is ready for exact certificate titles, issuers, dates, and credential URLs."
+      detail: "This section is ready for exact certificate titles, issuers, dates, and credential URLs from LinkedIn."
     },
     {
       title: "GitHub project-based learning",
@@ -92,10 +92,10 @@ window.PORTFOLIO = {
       detail: "Maintains public projects and learning repositories across AI, web, object-oriented programming, systems, and deployment."
     },
     {
-      role: "Portfolio Developer",
+      role: "Website Developer",
       org: "GitHub Pages",
       period: "2026",
-      detail: "Created and deployed a professional portfolio website through the Md-Faisal-Sheikh.github.io repository."
+      detail: "Created and deployed a professional personal website through the Md-Faisal-Sheikh.github.io repository."
     }
   ],
   featuredProjects: [
@@ -107,11 +107,11 @@ window.PORTFOLIO = {
     "CSE231_Theory_Project-Digital_Clock"
   ],
   projects: [
-    { name: "Md-Faisal-Sheikh.github.io", type: "Original", language: "JavaScript", description: "Personal portfolio website deployed with GitHub Pages.", url: "https://github.com/Md-Faisal-Sheikh/Md-Faisal-Sheikh.github.io", live: "https://md-faisal-sheikh.github.io/", updated: "May 2026" },
+    { name: "Md-Faisal-Sheikh.github.io", type: "Original", language: "JavaScript", description: "Personal website deployed with GitHub Pages.", url: "https://github.com/Md-Faisal-Sheikh/Md-Faisal-Sheikh.github.io", live: "https://md-faisal-sheikh.github.io/", updated: "May 2026" },
     { name: "hierarchical-relu-lora", type: "Fork", language: "AI / Research", description: "Repository connected to LoRA and neural network experimentation.", url: "https://github.com/Md-Faisal-Sheikh/hierarchical-relu-lora", updated: "May 2026" },
     { name: "495-DLBS", type: "Fork", language: "Python", description: "Python repository in the public project collection.", url: "https://github.com/Md-Faisal-Sheikh/495-DLBS", updated: "May 2026" },
     { name: "SignalPilot", type: "Fork", language: "Web / Product", description: "SignalPilot project with a live product homepage.", url: "https://github.com/Md-Faisal-Sheikh/SignalPilot", live: "https://www.signalpilot.ai/", updated: "Apr 2026" },
-    { name: "ReelMistri", type: "Fork", language: "Project", description: "Public project repository in the GitHub portfolio.", url: "https://github.com/Md-Faisal-Sheikh/ReelMistri", updated: "Mar 2026" },
+    { name: "ReelMistri", type: "Fork", language: "Project", description: "Public project repository in the GitHub collection.", url: "https://github.com/Md-Faisal-Sheikh/ReelMistri", updated: "Mar 2026" },
     { name: "Md-Faisal-Sheikh", type: "Original", language: "Profile", description: "GitHub profile repository.", url: "https://github.com/Md-Faisal-Sheikh/Md-Faisal-Sheikh", updated: "Mar 2026" },
     { name: "CSE231_Theory_Project-Digital_Clock", type: "Original", language: "Digital logic", description: "Theory project focused on a digital clock system.", url: "https://github.com/Md-Faisal-Sheikh/CSE231_Theory_Project-Digital_Clock", updated: "Mar 2026" },
     { name: "CSE273", type: "Original", language: "Coursework", description: "Course repository from CSE study work.", url: "https://github.com/Md-Faisal-Sheikh/CSE273", updated: "Mar 2026" },
