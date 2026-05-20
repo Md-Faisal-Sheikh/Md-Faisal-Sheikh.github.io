@@ -1,58 +1,132 @@
-// Portfolio content for Md Faisal Sheikh.
 window.PORTFOLIO = {
-  hero: {
-    name: "Md Faisal Sheikh",
-    role: "Frontend Developer",
-    tagline: "I build clean, responsive web experiences with modern JavaScript, React, thoughtful UI design, and reliable GitHub-based delivery.",
-    location: "Bangladesh",
-    availability: "Open to opportunities",
-  },
-  about: {
-    paragraphs: [
-      "I'm Md Faisal Sheikh, a web-focused developer shaping ideas into fast, polished, and usable digital experiences.",
-      "This portfolio highlights practical frontend work: responsive interfaces, interactive visuals, clean component structure, and deployment workflows that make a site easy to maintain.",
-      "For the latest professional history and updates, connect with me on LinkedIn."
+  profile: {
+    name: "Md. Faisal Sheikh",
+    shortName: "Faisal Sheikh",
+    role: "Computer Vision & NLP Enthusiast",
+    headline: "Building practical software across AI, web, and academic engineering projects.",
+    location: "Dhaka, Bangladesh",
+    company: "Markopolo AI INC",
+    status: "Open to opportunities",
+    bio: [
+      "I am a software and AI-focused developer with public work across computer vision, NLP, Java, PHP, C++, Python, Jupyter Notebook, and web deployment.",
+      "My GitHub shows hands-on projects in banking systems, marketplaces, digital logic, stress monitoring, machine learning experiments, and a professional portfolio deployed through GitHub Pages.",
+      "I like building useful systems, learning from real repositories, and turning technical ideas into clear, maintainable products."
     ],
+    avatar: "https://avatars.githubusercontent.com/u/151189489?v=4",
+    links: [
+      { label: "GitHub", url: "https://github.com/Md-Faisal-Sheikh" },
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/md-faisal-sheikh-5a9b46265" },
+      { label: "Portfolio", url: "https://md-faisal-sheikh.github.io/" },
+      { label: "Email", url: "mailto:151189489+Md-Faisal-Sheikh@users.noreply.github.com" }
+    ]
   },
+  stats: [
+    { value: "21", label: "Public GitHub repositories" },
+    { value: "2023", label: "GitHub since" },
+    { value: "5+", label: "Languages & stacks" },
+    { value: "Hireable", label: "GitHub availability" }
+  ],
+  focusAreas: [
+    "Computer Vision",
+    "Natural Language Processing",
+    "Frontend Development",
+    "Java & OOP",
+    "C++ Coursework",
+    "PHP Web Apps",
+    "Machine Learning Experiments",
+    "GitHub Pages Deployment"
+  ],
   skills: [
-    { group: "Frontend", items: ["HTML5", "CSS3", "JavaScript", "React", "Responsive UI"] },
-    { group: "Tools", items: ["Git", "GitHub", "GitHub Pages", "Browser DevTools", "Version control"] },
-    { group: "Strengths", items: ["Clean layouts", "Interactive experiences", "Problem solving", "Fast learning", "Professional communication"] },
+    { group: "Programming", items: ["Java", "Python", "C++", "PHP", "JavaScript", "Jupyter Notebook"] },
+    { group: "AI & Data", items: ["Computer Vision", "NLP", "ResNet34", "VGG16", "SVHN experiments", "Model evaluation"] },
+    { group: "Web & Tools", items: ["HTML", "CSS", "React", "Git", "GitHub", "GitHub Pages"] },
+    { group: "Professional", items: ["Problem solving", "Research mindset", "Documentation", "Project ownership", "Fast learning"] }
   ],
-  resume: [
-    { year: "Current", role: "Frontend Portfolio", org: "Md Faisal Sheikh" },
-    { year: "Current", role: "Professional Profile", org: "LinkedIn" },
-    { year: "Current", role: "Code & Deployment", org: "GitHub Pages" },
-    { year: "Ongoing", role: "Web Development Practice", org: "HTML, CSS, JavaScript, React" },
+  achievements: [
+    {
+      title: "Maintains 21 public GitHub repositories",
+      meta: "GitHub",
+      detail: "A public portfolio of coursework, AI experiments, systems projects, web apps, forks, and deployment work."
+    },
+    {
+      title: "Published a personal portfolio on GitHub Pages",
+      meta: "Deployment",
+      detail: "Built and deployed a live portfolio at md-faisal-sheikh.github.io using a main GitHub Pages repository."
+    },
+    {
+      title: "Built applied academic and engineering projects",
+      meta: "Projects",
+      detail: "Includes ATM banking, second-hand marketplace, digital clock, stress monitoring, and SVHN model comparison work."
+    },
+    {
+      title: "Explores current AI tooling and model ecosystems",
+      meta: "AI / Open source",
+      detail: "Public repositories include work or forks related to LMM evaluation, speech-text models, LoRA research, and research platforms."
+    }
   ],
-  highlights: [
-    { date: "Now", title: "Building a professional web portfolio", kind: "Portfolio" },
-    { date: "Now", title: "Deploying static sites through GitHub Pages", kind: "Deployment" },
-    { date: "Now", title: "Improving frontend UI with React and CSS", kind: "Frontend" },
-    { date: "Now", title: "Maintaining a public developer presence", kind: "LinkedIn" },
+  certificates: [
+    {
+      title: "LinkedIn certificates and credentials",
+      issuer: "LinkedIn profile",
+      date: "Available on request",
+      detail: "LinkedIn did not expose certificate details to this environment. This section is ready for exact certificate titles, issuers, dates, and credential URLs."
+    },
+    {
+      title: "GitHub project-based learning",
+      issuer: "Public repositories",
+      date: "2023 - 2026",
+      detail: "Evidence of hands-on learning through Java, C++, PHP, Python, Jupyter Notebook, AI, and web deployment repositories."
+    }
   ],
-  contact: {
-    primaryLabel: "Connect on LinkedIn",
-    primaryUrl: "https://www.linkedin.com/in/md-faisal-sheikh-5a9b46265",
-    socials: [
-      { label: "LinkedIn", handle: "md-faisal-sheikh-5a9b46265", url: "https://www.linkedin.com/in/md-faisal-sheikh-5a9b46265" },
-      { label: "GitHub", handle: "Md-Faisal-Sheikh", url: "https://github.com/Md-Faisal-Sheikh" },
-      { label: "Portfolio", handle: "md-faisal-sheikh.github.io", url: "https://md-faisal-sheikh.github.io/" },
-      { label: "Email", handle: "GitHub noreply", url: "mailto:151189489+Md-Faisal-Sheikh@users.noreply.github.com" },
-    ],
-  },
-  works: [
-    { id: "w01", code: "P / 01", kind: "project", title: "Portfolio Website", year: "2026", tag: "React / UI", blurb: "A personal portfolio built as an interactive single-page experience with React, custom CSS, and a live 3D catalogue.", role: "Design, frontend build, content", duration: "Personal project", team: "Solo", status: "Live on GitHub Pages", primaryLabel: "Visit site", primaryUrl: "https://md-faisal-sheikh.github.io/", secondaryLabel: "GitHub", secondaryUrl: "https://github.com/Md-Faisal-Sheikh/Md-Faisal-Sheikh.github.io" },
-    { id: "w02", code: "P / 02", kind: "project", title: "GitHub Pages Deploy", year: "2026", tag: "Deployment", blurb: "Configured a static portfolio repository for the main GitHub Pages domain with a clean main branch workflow.", role: "Git setup, deployment", duration: "One release", team: "Solo", status: "Published", primaryLabel: "Visit site", primaryUrl: "https://md-faisal-sheikh.github.io/", secondaryLabel: "Repository", secondaryUrl: "https://github.com/Md-Faisal-Sheikh/Md-Faisal-Sheikh.github.io" },
-    { id: "w03", code: "P / 03", kind: "project", title: "Interactive 3D Scene", year: "2026", tag: "Three.js", blurb: "A WebGL-powered catalogue that presents portfolio work as selectable cards with hover states, focus transitions, and spatial layouts.", role: "Interaction design, frontend", duration: "Portfolio feature", team: "Solo", status: "Live" },
-    { id: "w04", code: "P / 04", kind: "project", title: "Responsive Interface", year: "2026", tag: "CSS / Layout", blurb: "A responsive UI system for the portfolio with sidebar navigation, overlays, project filters, and mobile layout guards.", role: "Frontend implementation", duration: "Portfolio feature", team: "Solo", status: "Live" },
-    { id: "w05", code: "P / 05", kind: "project", title: "Profile Refresh", year: "2026", tag: "Personal Brand", blurb: "Reworked the portfolio from template content into a focused professional presence for Md Faisal Sheikh.", role: "Content structure, UI polish", duration: "Content update", team: "Solo", status: "Published", primaryLabel: "LinkedIn", primaryUrl: "https://www.linkedin.com/in/md-faisal-sheikh-5a9b46265" },
-    { id: "w06", code: "P / 06", kind: "project", title: "Component Overlay", year: "2026", tag: "React", blurb: "A lightweight React overlay system for About, Skills, Experience, Highlights, and Contact sections.", role: "React UI", duration: "Portfolio feature", team: "Solo", status: "Live" },
-    { id: "w07", code: "L / 01", kind: "learning", title: "JavaScript", year: "Ongoing", tag: "Core web", blurb: "Continuing to strengthen modern JavaScript fundamentals for interactive, maintainable frontend projects.", role: "Practice", duration: "Ongoing", team: "Self-directed", status: "Active" },
-    { id: "w08", code: "L / 02", kind: "learning", title: "React", year: "Ongoing", tag: "Frontend", blurb: "Building UI with component-based thinking, reusable data structures, and state-driven interactions.", role: "Practice", duration: "Ongoing", team: "Self-directed", status: "Active" },
-    { id: "w09", code: "L / 03", kind: "learning", title: "CSS Layout", year: "Ongoing", tag: "Responsive UI", blurb: "Working with responsive layout, typography, spacing, visual hierarchy, and polished interface details.", role: "Practice", duration: "Ongoing", team: "Self-directed", status: "Active" },
-    { id: "w10", code: "L / 04", kind: "learning", title: "Git Workflow", year: "Ongoing", tag: "Version Control", blurb: "Using Git and GitHub to track changes, publish work, and keep projects ready for collaboration.", role: "Version control", duration: "Ongoing", team: "Self-directed", status: "Active" },
-    { id: "w11", code: "L / 05", kind: "learning", title: "Deployment", year: "Ongoing", tag: "GitHub Pages", blurb: "Publishing static sites through GitHub Pages with root-level assets, main-branch deployment, and simple release checks.", role: "Deployment", duration: "Ongoing", team: "Self-directed", status: "Active" },
-    { id: "w12", code: "L / 06", kind: "learning", title: "Professional Presence", year: "Ongoing", tag: "LinkedIn", blurb: "Keeping portfolio, LinkedIn, and GitHub aligned so visitors can quickly understand skills, work, and contact paths.", role: "Personal branding", duration: "Ongoing", team: "Self-directed", status: "Active", primaryLabel: "LinkedIn", primaryUrl: "https://www.linkedin.com/in/md-faisal-sheikh-5a9b46265" },
+  experience: [
+    {
+      role: "Computer Vision & NLP Enthusiast",
+      org: "Markopolo AI INC",
+      period: "Current",
+      detail: "Public GitHub profile lists Markopolo AI INC and a focus on computer vision and natural language processing."
+    },
+    {
+      role: "Software Project Builder",
+      org: "GitHub",
+      period: "2023 - Present",
+      detail: "Maintains public projects and learning repositories across AI, web, object-oriented programming, systems, and deployment."
+    },
+    {
+      role: "Portfolio Developer",
+      org: "GitHub Pages",
+      period: "2026",
+      detail: "Created and deployed a professional portfolio website through the Md-Faisal-Sheikh.github.io repository."
+    }
   ],
+  featuredProjects: [
+    "Md-Faisal-Sheikh.github.io",
+    "SVHN_ResNet34_VGG16_Implementation_-_Comparison.ipynb",
+    "Second-Hand-Marketplace",
+    "ATM-BANKING-MANAGEMENT-SYSTEM",
+    "Stretch-A-Low-Cost-System-for-Stress-Monitoring-and-Detection",
+    "CSE231_Theory_Project-Digital_Clock"
+  ],
+  projects: [
+    { name: "Md-Faisal-Sheikh.github.io", type: "Original", language: "JavaScript", description: "Personal portfolio website deployed with GitHub Pages.", url: "https://github.com/Md-Faisal-Sheikh/Md-Faisal-Sheikh.github.io", live: "https://md-faisal-sheikh.github.io/", updated: "May 2026" },
+    { name: "hierarchical-relu-lora", type: "Fork", language: "AI / Research", description: "Repository connected to LoRA and neural network experimentation.", url: "https://github.com/Md-Faisal-Sheikh/hierarchical-relu-lora", updated: "May 2026" },
+    { name: "495-DLBS", type: "Fork", language: "Python", description: "Python repository in the public project collection.", url: "https://github.com/Md-Faisal-Sheikh/495-DLBS", updated: "May 2026" },
+    { name: "SignalPilot", type: "Fork", language: "Web / Product", description: "SignalPilot project with a live product homepage.", url: "https://github.com/Md-Faisal-Sheikh/SignalPilot", live: "https://www.signalpilot.ai/", updated: "Apr 2026" },
+    { name: "ReelMistri", type: "Fork", language: "Project", description: "Public project repository in the GitHub portfolio.", url: "https://github.com/Md-Faisal-Sheikh/ReelMistri", updated: "Mar 2026" },
+    { name: "Md-Faisal-Sheikh", type: "Original", language: "Profile", description: "GitHub profile repository.", url: "https://github.com/Md-Faisal-Sheikh/Md-Faisal-Sheikh", updated: "Mar 2026" },
+    { name: "CSE231_Theory_Project-Digital_Clock", type: "Original", language: "Digital logic", description: "Theory project focused on a digital clock system.", url: "https://github.com/Md-Faisal-Sheikh/CSE231_Theory_Project-Digital_Clock", updated: "Mar 2026" },
+    { name: "CSE273", type: "Original", language: "Coursework", description: "Course repository from CSE study work.", url: "https://github.com/Md-Faisal-Sheikh/CSE273", updated: "Mar 2026" },
+    { name: "Stretch-A-Low-Cost-System-for-Stress-Monitoring-and-Detection", type: "Original", language: "Research / Hardware", description: "Low-cost stress monitoring and detection system project.", url: "https://github.com/Md-Faisal-Sheikh/Stretch-A-Low-Cost-System-for-Stress-Monitoring-and-Detection", updated: "Mar 2026" },
+    { name: "CSE215-Lab", type: "Original", language: "Java", description: "Java lab and coursework repository.", url: "https://github.com/Md-Faisal-Sheikh/CSE215-Lab", updated: "Mar 2026" },
+    { name: "CSE225-Lab", type: "Original", language: "C++", description: "C++ lab and coursework repository.", url: "https://github.com/Md-Faisal-Sheikh/CSE225-Lab", updated: "Mar 2026" },
+    { name: "Second-Hand-Marketplace", type: "Original", language: "PHP", description: "Web application project for a second-hand marketplace.", url: "https://github.com/Md-Faisal-Sheikh/Second-Hand-Marketplace", updated: "Mar 2026" },
+    { name: "SVHN_ResNet34_VGG16_Implementation_-_Comparison.ipynb", type: "Original", language: "Jupyter Notebook", description: "Comparison project implementing ResNet34 and VGG16 on the SVHN dataset.", url: "https://github.com/Md-Faisal-Sheikh/SVHN_ResNet34_VGG16_Implementation_-_Comparison.ipynb", updated: "Mar 2026" },
+    { name: "ATM-Banking-Management", type: "Fork", language: "Project", description: "ATM banking management repository.", url: "https://github.com/Md-Faisal-Sheikh/ATM-Banking-Management", updated: "Mar 2026" },
+    { name: "ATM-BANKING-MANAGEMENT-SYSTEM", type: "Original", language: "Java", description: "ATM bank management project.", url: "https://github.com/Md-Faisal-Sheikh/ATM-BANKING-MANAGEMENT-SYSTEM", updated: "Mar 2026" },
+    { name: "VLMEvalKit", type: "Fork", language: "AI evaluation", description: "Open-source evaluation toolkit for large multi-modality models with 220+ LMMs and 80+ benchmarks.", url: "https://github.com/Md-Faisal-Sheikh/VLMEvalKit", live: "https://huggingface.co/spaces/opencompass/open_vlm_leaderboard", updated: "Mar 2026" },
+    { name: "moshi", type: "Fork", language: "Speech AI", description: "Speech-text foundation model and full-duplex spoken dialogue framework.", url: "https://github.com/Md-Faisal-Sheikh/moshi", updated: "Mar 2026" },
+    { name: "personaplex", type: "Fork", language: "AI / Product", description: "PersonaPlex code repository.", url: "https://github.com/Md-Faisal-Sheikh/personaplex", updated: "Mar 2026" },
+    { name: "novus-buetcse-fest", type: "Fork", language: "Event / CSE", description: "Repository connected to BUET CSE Fest work.", url: "https://github.com/Md-Faisal-Sheikh/novus-buetcse-fest", updated: "Jan 2026" },
+    { name: "bcf-2026-hackathon-preliminary", type: "Fork", language: "Hackathon", description: "Hackathon preliminary repository.", url: "https://github.com/Md-Faisal-Sheikh/bcf-2026-hackathon-preliminary", updated: "Jan 2026" },
+    { name: "ClearCite", type: "Fork", language: "Research platform", description: "Unified research platform for organizing papers, collaboration, Drive files, and PDF analysis.", url: "https://github.com/Md-Faisal-Sheikh/ClearCite", live: "https://clearcite-mprzm.ondigitalocean.app", updated: "Jan 2026" }
+  ]
 };
